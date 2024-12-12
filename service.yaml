@@ -6,7 +6,7 @@ metadata:
   namespace: backend
 spec:
   ports:
-    - port: 80
+    - port: 2000
       protocol: TCP
   selector:
     app: backend
@@ -19,7 +19,7 @@ metadata:
   namespace: backend
 spec:
   ports:
-    - port: 80
+    - port: 2000
       protocol: TCP
   selector:
     app: backend
