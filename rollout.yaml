@@ -1,0 +1,33 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: backend
+  namespace: backend
+spec:
+  selector:
+    matchLabels:
+      type: backend
+      app: backend
+      version: v1.0.0
+  template:
+    metadata:
+      labels:
+        type: backend
+        app: backend
+        version: v1.0.0
+    spec:
+      containers:
+        - name: backend
+          image: dlwpdnr213/sha256:83b5b41ec6caa38608f0be5c65768a079f807870dfd42dbae525feda09f24829
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 200m
+              memory: 512Mi
+  strategy:
+    blueGreen:
+      activeService: backend-active
+      previewService: backend-preview
+      autoPromotionEnabled: false
