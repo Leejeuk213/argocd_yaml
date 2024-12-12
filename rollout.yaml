@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: dlwpdnr213/sha256:83b5b41ec6caa38608f0be5c65768a079f807870dfd42dbae525feda09f24829
+          image: dlwpdnr213/gitops-test:build-9eacbb5
           ports:
             - containerPort: 80
           resources:
